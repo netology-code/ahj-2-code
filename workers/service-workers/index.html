@@ -1,0 +1,23 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./node_modules/mini.css/dist/mini-default.min.css"/>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <h1>Сервис воркеры</h1>
+  <h2>Профиль dusty</h2>
+  <img class="user-image" src="./images/user/dusty.dfh4sf45.jpg"/>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js', { scope: './' })
+        .then((reg) => {
+          // регистрация сработала
+          console.log('Registration succeeded. Scope is ' + reg.scope);
+        }).catch((error) => {
+          // регистрация прошла неудачно
+          console.log('Registration failed with ' + error);
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Postmessages</h1>
+  <iframe class="iframe" src="http://localhost:8081/"></iframe>
+  <pre class="messages"></pre>
+  <script>
+    const iframe = document.querySelector('.iframe');
+    const iframeWindow = iframe.contentWindow.window;
+    const messages = document.querySelector('.messages');
+
+    const sendMessage = (message) => {
+      iframeWindow.postMessage(message, 'http://localhost:8081');
+    }
+
+    iframe.addEventListener('load', () => {
+      sendMessage('start message');
+
+      window.addEventListener('message', (event) => {
+        messages.textContent += event.data + '\n';
+
+        setTimeout(() => {
+          sendMessage(Math.round(Math.random() * 1000));
+        }, 1000);
+      });
+    });
+
+  </script>
+</body>
+</html>
