@@ -1,0 +1,44 @@
+.chameleon {
+  display: inline-block;
+
+  padding: 12px 24px;
+  border: 2px solid #333;
+  border-radius: 6px;
+
+  color: white;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.chameleon-animation {
+  color: red;
+
+  transition: color 2s;
+}
+
+.chameleon-animation:hover {
+  color: blue;
+}
+
+
+.flex-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spacer {
+  flex-grow: 0;
+
+  transition: all 3s;
+}
+
+.flex-container:hover .spacer {
+  flex-grow: 1;
+}
+
+.moving {
+  height: 100px;
+  width: 100px;
+
+  background-color: coral;
+}

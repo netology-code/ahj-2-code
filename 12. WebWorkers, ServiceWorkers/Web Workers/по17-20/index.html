@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+    <h1>Web workers</h1>
+    <img class="img-preview">
+    <input type="file" class="file-input"/>
+    <button class="slow-button">Воркер-кнопка</button>
+    <button class="console-button">Консоль-кнопка</button>
+	<script>
+	const worker = new Worker('./worker.js');
+	
+	const imagePreview = document.querySelector('.img-preview');
+	const slowButton = document.querySelector('.slow-button');
+	const consoleButton = document.querySelector('.console-button');
+    const fileInput = document.querySelector('.file-input');
+
+	slowButton.addEventListener('click', async () => {
+      console.log('start');
+      
+      worker.postMessage('calculate');
+	});
+	
+	consoleButton.addEventListener('click', () => {
+      console.log('click console-button');
+	});
+	
+	worker.addEventListener('message', (event) => {
+	  imagePreview.src = event.data;
+	});
+	
+	fileInput.addEventListener('change', () => {
+	  const target = event.target;
+	  
+	  const userFile = target.files && target.files[0];
+	  
+	  worker.postMessage(userFile);
+	});
+	</script>
+</body>
+</html>
