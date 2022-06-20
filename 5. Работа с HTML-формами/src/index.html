@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form" novalidate>
+        <div class="form-control">
+            <input name="login" id="login" class="input login" type="text" placeholder="login" required>
+        </div>
+        <div class="form-control">
+            <input name="email" type="email" class="input email" placeholder="email" required>
+        </div>
+        <div class="form-control">
+            <input name="credit-card" class="input credit-card" placeholder="credit card" required pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$">
+        </div>
+        <div>
+            <button type="submit" class="btn">Ok</button>
+            <button type="reset" class="btn">Reset</button>
+        </div>
+    </form>
+</body>
+</html>

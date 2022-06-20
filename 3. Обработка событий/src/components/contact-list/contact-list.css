@@ -1,0 +1,35 @@
+.contact-list {
+    padding-left: 0;
+}
+
+.contact-list-item:first-child,
+.contact-list-item:last-child {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.contact-list-item {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+
+.contact-main {
+    display: flex;
+    align-items: center;
+}
+
+.contact-list-item-img {
+    max-width: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.contact-list-item-name,
+.contact-list-item-phone,
+.contact-list-item-action {
+    margin-right: 1rem;
+}
