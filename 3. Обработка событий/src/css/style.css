@@ -1,0 +1,16 @@
+body {
+    color: #333;
+}
+
+.input {
+    display: inline-block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid #ced4da;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,34 @@
+.chameleon {
+  display: inline-block;
+  
+  padding: 12px 24px;
+  border: 2px solid #333;
+  border-radius: 6px;
+
+  color: white;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.chameleon-animation {
+  color: red;
+  
+  transition: color 2s;
+}
+
+.chameleon-animation:hover {
+  color: blue;
+}
+
+/* Coin Sample Starter */
+.coin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 60px;
+  height: 60px;
+  
+  border-radius: 50%;
+}
